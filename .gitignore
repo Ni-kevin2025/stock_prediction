@@ -1,0 +1,43 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.test-tmp*/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Runtime data and generated artifacts
+data/raw/
+data/processed/
+data/cache/
+data/trading_profile.json
+artifacts/
+models/
+logs/
+reports/generated/
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+# Local IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

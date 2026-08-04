@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stock-prediction-agent"
+version = "0.1.0"
+description = "A traceable multi-agent research assistant for stock analysis."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "akshare",
+    "duckdb",
+    "langgraph",
+    "openai",
+    "pandas",
+    "pandas-ta-classic",
+    "pydantic-settings",
+    "python-dotenv",
+    "rapidocr-onnxruntime",
+    "tushare",
+    "yfinance",
+]
+
+[project.scripts]
+stock-agent = "stock_prediction.__main__:main"
+
+[project.optional-dependencies]
+analysis = ["backtesting", "empyrical", "quantstats", "vectorbt"]
+api = ["fastapi", "streamlit", "uvicorn[standard]"]
+ml = ["lightgbm", "scikit-learn", "xgboost"]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
